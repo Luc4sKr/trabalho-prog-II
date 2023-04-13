@@ -29,15 +29,14 @@ export default {
     /* DEFAULT */
     --default-width: 100px;
     --default-height: 180px;
-}
 
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    /* HIGH */
+    --high-width: 120px;
+    --high-height: 190px;
+
+
+    --minion-width: var(--default-width);
+    --minion-height: var(--default-height);
 }
 
 .center {

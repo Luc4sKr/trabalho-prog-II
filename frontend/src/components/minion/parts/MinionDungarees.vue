@@ -22,11 +22,11 @@
 
 </script>
 
-<style>
+<style scoped>
 .dungarees-main {
     background-color: var(--blue);
     width: 100%;
-    height: 50px;
+    height: 40px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 
@@ -84,7 +84,7 @@
 .left-leg,
 .right-leg {
     background: #336188;
-    height: 15px;
+    height: 5px;
     width: 15px;
     z-index: 31;
 }

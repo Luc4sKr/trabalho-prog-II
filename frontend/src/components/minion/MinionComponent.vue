@@ -31,8 +31,8 @@ export default {
 
 .body {
     background-color: var(--yellow);
-    width: var(--default-width);
-    height: var(--default-height);
+    width: var(--minion-width);
+    height: var(--minion-height);
     position: relative;
 
     border-radius: 100px 100px 60px 60px;
@@ -66,7 +66,9 @@ export default {
 }
 
 .dungarees {
-    height: 80px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
 }
 
 
