@@ -11,24 +11,7 @@ class Amountofeyes(db.Model):
 
 class Height (db.Model):
     id = db.Column (db.Integer, primary_key = True)
-    height = db.Column (db.Text)31 minutes ago
-LICENSE
-Initial commit
-38 minutes ago
-README.md
-Initial commit
-38 minutes ago
-README.md
-trabalho-prog-II
-Repositório para o trabalho de Programação II
-
-About
-Repositório para o trabalho de Programação II
-
-Resources
- Readme
-License
-
+    height = db.Column (db.Text)
 
 class Minion(db.Model):
     id = db.Column (db.Integer, primary_key = True)
