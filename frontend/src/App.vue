@@ -19,6 +19,16 @@ export default {
 :root {
     --yellow: #fce55b;
     --blue: #336188;
+
+    /* --- MINION SIZES --- */
+
+    /* SMALL */
+    --small-width: 90px;
+    --small-height: 170px;
+
+    /* DEFAULT */
+    --default-width: 100px;
+    --default-height: 180px;
 }
 
 #app {
@@ -35,4 +45,5 @@ export default {
 
     margin-left: 100px;
 }
+
 </style>
