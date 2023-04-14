@@ -23,4 +23,7 @@ class Minion(db.Model):
     height_id = db.Column (db.Integer,db.ForeignKey(Height.id), nullable =False)
     height = db.relationship ("Height")
 
+    def json(self):
+        return ""
+
 
