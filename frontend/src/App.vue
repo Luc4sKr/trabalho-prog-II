@@ -1,0 +1,48 @@
+<template>
+    <div class="center">
+        <MinionComponent />
+    </div>
+</template>
+
+<script>
+import MinionComponent from "./components/minion/MinionComponent.vue";
+
+export default {
+    name: 'App',
+    components: {
+        MinionComponent
+    }
+}
+</script>
+
+<style>
+:root {
+    --yellow: #fce55b;
+    --blue: #336188;
+
+    /* --- MINION SIZES --- */
+
+    /* SMALL */
+    --small-width: 90px;
+    --small-height: 170px;
+
+    /* DEFAULT */
+    --default-width: 100px;
+    --default-height: 180px;
+
+    /* HIGH */
+    --high-width: 120px;
+    --high-height: 190px;
+
+
+    --minion-width: var(--default-width);
+    --minion-height: var(--default-height);
+}
+
+.center {
+    width: 100%;
+
+    margin-left: 100px;
+}
+
+</style>
