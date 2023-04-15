@@ -36,7 +36,7 @@
 
 .dungarees-front {
     background-color: var(--blue);
-    width: 60px;
+    width: 65%;
     height: 100%;
     border-radius: 10px 10px 0 0;
 
@@ -49,6 +49,7 @@
 .left-strap {
     width: 6px;
     height: 40px;
+
     -webkit-transform: rotate(-50deg);
     transform: rotate(-50deg);
     background: #336188;
@@ -57,13 +58,14 @@
     z-index: 50;
 
     position: absolute;
-    top: -20px;
-    left: -10px;
+    bottom: 20px;
+    left: var(--minion-dungares);
 }
 
 .right-strap {
     width: 6px;
     height: 40px;
+    
     -webkit-transform: rotate(50deg);
     transform: rotate(50deg);
     background: #336188;
@@ -72,8 +74,8 @@
     z-index: 50;
 
     position: absolute;
-    top: -20px;
-    right: -10px;
+    bottom: 20px;
+    right: var(--minion-dungares);
 }
 
 .legs {
