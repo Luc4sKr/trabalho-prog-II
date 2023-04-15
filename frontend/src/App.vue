@@ -34,9 +34,15 @@ export default {
     --high-width: 120px;
     --high-height: 190px;
 
+    /* DUNGAREES */
+    --minion--dungarees-small: -5px;
+    --minion--dungarees-default: -7px;
+    --minion--dungarees-high: -11px;
 
+    /* MINION */
     --minion-width: var(--default-width);
     --minion-height: var(--default-height);
+    --minion-dungares: var(--minion--dungarees-default);
 }
 
 .center {
