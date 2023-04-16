@@ -4,22 +4,28 @@
             <div class="left-strap"></div>
             <div class="right-strap"></div>
         </div>
-        <div class="arms">
-            
-        </div>
     </div>
+    <div class="arms">
+            <MinionArm class="left-arm"/>
+            <MinionArm class="right-arm"/>
+        </div>
     <div class="legs">
-        <div class="left-leg">
-            <div class="left-foot"></div>
-        </div>
-        <div class="right-leg">
-            <div class="right-foot"></div>
-        </div>
+        <MinionLeg class="left-leg" :left_leg="true"/>
+        <MinionLeg class="right-leg" :left_leg="false"/>
     </div>
 </template>
 
 <script>
+import MinionLeg from "./MinionLeg.vue";
+import MinionArm from "./MinionArm.vue";
 
+export default {
+    name: "MinionDungrees",
+    components: {
+        MinionLeg,
+        MinionArm
+    }
+}
 </script>
 
 <style scoped>
@@ -78,17 +84,24 @@
     right: var(--minion-dungares);
 }
 
+.arms {
+    position: relative;
+    top: -5px;
+    transform: rotate(90deg);
+}
+
+.left-arm {
+    top: calc(var(--minion-width) / 2 - 1px);
+}
+
+.right-arm {
+    bottom: calc(var(--minion-width) / 2 - 1px);
+    transform: rotate(180deg);
+}
+
 .legs {
     position: relative;
     top: 90%;
-}
-
-.left-leg,
-.right-leg {
-    background: #336188;
-    height: 5px;
-    width: 15px;
-    z-index: 31;
 }
 
 .left-leg {
@@ -99,29 +112,5 @@
 .right-leg {
     position: absolute;
     right: 25%;
-}
-
-
-.left-foot,
-.right-foot {
-    width: 20px;
-    height: 5px;
-    background: #272727;
-    border-bottom: 2px solid #000000;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    z-index: 34;
-
-    position: absolute;
-    top: 100%;
-}
-
-.left-foot {
-    border-radius: 10px 0 4px 4px;
-    left: -5px;
-}
-
-.right-foot {
-    border-radius: 0 10px 4px 4px;
-    right: -5px;
 }
 </style>

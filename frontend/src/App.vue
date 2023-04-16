@@ -1,6 +1,6 @@
 <template>
     <div class="center">
-        <MinionComponent />
+        <MinionComponent :key="minion.id" v-bind="minion" />
     </div>
 </template>
 
@@ -11,6 +11,23 @@ export default {
     name: 'App',
     components: {
         MinionComponent
+    },
+    data() {
+        return {
+            minion: {
+                id: 1,
+                name: "Minion 1",
+                hair: {
+                    id: 1,
+                    hair_name: "Algo"
+                },
+                width: {
+                    id: 1,
+                    minion_width: 120,
+                    minion_dungarees_pos: -11
+                }
+            }
+        }
     }
 }
 </script>
