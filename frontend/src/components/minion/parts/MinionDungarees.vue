@@ -6,8 +6,8 @@
         </div>
     </div>
     <div class="arms">
-            <MinionArm class="left-arm"/>
-            <MinionArm class="right-arm"/>
+            <MinionArm class="left-arm" :left_arm="true"/>
+            <MinionArm class="right-arm" :left_arm="false"/>
         </div>
     <div class="legs">
         <MinionLeg class="left-leg" :left_leg="true"/>
@@ -65,7 +65,7 @@ export default {
 
     position: absolute;
     bottom: 20px;
-    left: var(--minion-dungares);
+    left: var(--minion-dungarees);
 }
 
 .right-strap {
@@ -81,22 +81,24 @@ export default {
 
     position: absolute;
     bottom: 20px;
-    right: var(--minion-dungares);
+    right: var(--minion-dungarees);
 }
 
 .arms {
     position: relative;
-    top: -5px;
-    transform: rotate(90deg);
+    height: 10px;
+    width: 100%;
+    top: -58px;
 }
 
 .left-arm {
-    top: calc(var(--minion-width) / 2 - 1px);
+    top: 0px;
+    right: 105%;
 }
 
 .right-arm {
-    bottom: calc(var(--minion-width) / 2 - 1px);
-    transform: rotate(180deg);
+    top: 0px;
+    left: 105%;
 }
 
 .legs {

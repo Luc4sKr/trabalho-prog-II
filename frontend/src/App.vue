@@ -23,8 +23,9 @@ export default {
                 },
                 width: {
                     id: 1,
-                    minion_width: 120,
-                    minion_dungarees_pos: -11
+                    minion_width: "default",
+                    css_width_reference: "--small-width",
+                    css_dungarees_reference: "--minion--dungarees-small" 
                 }
             }
         }
@@ -59,7 +60,7 @@ export default {
     /* MINION */
     --minion-width: var(--default-width);
     --minion-height: var(--default-height);
-    --minion-dungares: var(--minion--dungarees-default);
+    --minion-dungarees: var(--minion--dungarees-default);
 }
 
 .center {
