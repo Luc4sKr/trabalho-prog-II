@@ -43,10 +43,14 @@ export default {
         }
     },
     created() {
-        /*let minion_width = getComputedStyle(document.documentElement).getPropertyValue('--minion-width'); 
-        document.body.style.setProperty('--minion-width', `${this.width.minion_width}px`);
-        document.body.style.setProperty('--minion-dungares', `${this.width.minion_dungarees_pos}px`);
-        console.log(minion_width)*/
+        let minion_width = getComputedStyle(document.documentElement).getPropertyValue(this.width.css_width_reference); 
+        let minion_dungarees = getComputedStyle(document.documentElement).getPropertyValue(this.width.css_dungarees_reference);
+
+        document.body.style.setProperty('--minion-width', minion_width);
+        document.body.style.setProperty('--minion-dungarees', minion_dungarees);
+
+        console.log(minion_width);
+        console.log(minion_dungarees);
     }
 }
 </script>

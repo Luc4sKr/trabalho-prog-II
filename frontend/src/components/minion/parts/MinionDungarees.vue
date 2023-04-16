@@ -65,7 +65,7 @@ export default {
 
     position: absolute;
     bottom: 20px;
-    left: var(--minion-dungares);
+    left: var(--minion-dungarees);
 }
 
 .right-strap {
@@ -81,7 +81,7 @@ export default {
 
     position: absolute;
     bottom: 20px;
-    right: var(--minion-dungares);
+    right: var(--minion-dungarees);
 }
 
 .arms {
