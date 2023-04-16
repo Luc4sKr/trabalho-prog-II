@@ -44,11 +44,8 @@ export default {
     },
     created() {
         /*let minion_width = getComputedStyle(document.documentElement).getPropertyValue('--minion-width'); 
-        
         document.body.style.setProperty('--minion-width', `${this.width.minion_width}px`);
         document.body.style.setProperty('--minion-dungares', `${this.width.minion_dungarees_pos}px`);
-
-
         console.log(minion_width)*/
     }
 }
