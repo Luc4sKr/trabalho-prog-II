@@ -4,10 +4,11 @@
             <div class="left-strap"></div>
             <div class="right-strap"></div>
         </div>
-        <div class="arms">
-            
-        </div>
     </div>
+    <div class="arms">
+            <MinionArm class="left-arm"/>
+            <MinionArm class="right-arm"/>
+        </div>
     <div class="legs">
         <MinionLeg class="left-leg" :left_leg="true"/>
         <MinionLeg class="right-leg" :left_leg="false"/>
@@ -16,11 +17,13 @@
 
 <script>
 import MinionLeg from "./MinionLeg.vue";
+import MinionArm from "./MinionArm.vue";
 
 export default {
     name: "MinionDungrees",
     components: {
-        MinionLeg
+        MinionLeg,
+        MinionArm
     }
 }
 </script>
@@ -79,6 +82,21 @@ export default {
     position: absolute;
     bottom: 20px;
     right: var(--minion-dungares);
+}
+
+.arms {
+    position: relative;
+    top: -5px;
+    transform: rotate(90deg);
+}
+
+.left-arm {
+    top: calc(var(--minion-width) / 2 - 1px);
+}
+
+.right-arm {
+    bottom: calc(var(--minion-width) / 2 - 1px);
+    transform: rotate(180deg);
 }
 
 .legs {

@@ -22,13 +22,40 @@ export default {
     components: {
         MinionGoggles,
         MinionDungarees
+    },
+    data() {
+        return {
+
+        }
+    },
+    props: {
+        name: {
+            type: String,
+            required: true
+        },
+        hair: {
+            type: Object,
+            required: true
+        },
+        width: {
+            type: Object,
+            required: true
+        }
+    },
+    created() {
+        /*let minion_width = getComputedStyle(document.documentElement).getPropertyValue('--minion-width'); 
+        
+        document.body.style.setProperty('--minion-width', `${this.width.minion_width}px`);
+        document.body.style.setProperty('--minion-dungares', `${this.width.minion_dungarees_pos}px`);
+
+
+        console.log(minion_width)*/
     }
 }
 </script>
 
 
 <style scoped>
-
 .body {
     background-color: var(--yellow);
     width: var(--minion-width);
@@ -70,6 +97,4 @@ export default {
     position: absolute;
     bottom: 0px;
 }
-
-
 </style>
