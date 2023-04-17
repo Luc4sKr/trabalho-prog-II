@@ -17,15 +17,21 @@ export default {
             minion: {
                 id: 1,
                 name: "Minion 1",
+
                 hair: {
                     id: 1,
-                    hair_name: "Algo"
+                    hair_name: "Default"
                 },
                 width: {
                     id: 1,
                     minion_width: "default",
-                    css_width_reference: "--small-width",
-                    css_dungarees_reference: "--minion--dungarees-small" 
+                    css_width_reference: "--default-width",
+                    css_dungarees_reference: "--minion--dungarees-default" 
+                },
+                height: {
+                    id: 1,
+                    minion_height: "default",
+                    css_height_reference: "--default-height"
                 }
             }
         }
@@ -35,6 +41,7 @@ export default {
 
 <style>
 :root {
+    /* COLORS */
     --yellow: #fce55b;
     --blue: #336188;
 
@@ -57,7 +64,8 @@ export default {
     --minion--dungarees-default: -7px;
     --minion--dungarees-high: -11px;
 
-    /* MINION */
+
+    /* --- MINION --- */
     --minion-width: var(--default-width);
     --minion-height: var(--default-height);
     --minion-dungarees: var(--minion--dungarees-default);

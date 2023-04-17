@@ -17,6 +17,8 @@
 import MinionGoggles from "./parts/MinionGoggles.vue";
 import MinionDungarees from "./parts/MinionDungarees.vue";
 
+import { setPropertyStyleVal } from "@/scripts/utils.js";
+
 export default {
     name: "MinionComponent",
     components: {
@@ -40,17 +42,16 @@ export default {
         width: {
             type: Object,
             required: true
+        },
+        height: {
+            type: Object,
+            required: true
         }
     },
     created() {
-        let minion_width = getComputedStyle(document.documentElement).getPropertyValue(this.width.css_width_reference); 
-        let minion_dungarees = getComputedStyle(document.documentElement).getPropertyValue(this.width.css_dungarees_reference);
-
-        document.body.style.setProperty('--minion-width', minion_width);
-        document.body.style.setProperty('--minion-dungarees', minion_dungarees);
-
-        console.log(minion_width);
-        console.log(minion_dungarees);
+        setPropertyStyleVal("--minion-dungarees", this.width.css_dungarees_reference);
+        setPropertyStyleVal("--minion-width", this.width.css_width_reference);
+        setPropertyStyleVal("--minion-height", this.height.css_height_reference);
     }
 }
 </script>
