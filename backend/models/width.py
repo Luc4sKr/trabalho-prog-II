@@ -11,4 +11,7 @@ class Width(db.Model):
         return
     
     def json(self):
-        return
+        return {
+            "id": self.id,
+            "width": self.width
+        }
