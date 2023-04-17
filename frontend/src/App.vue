@@ -1,16 +1,23 @@
 <template>
-    <div class="center">
-        <MinionComponent :key="minion.id" v-bind="minion" />
+    <HeaderComponent />
+
+    <div>
+        <FormComponent />
     </div>
 </template>
 
 <script>
-import MinionComponent from "./components/minion/MinionComponent.vue";
+import HeaderComponent from "./components/HeaderComponent.vue";
+import FormComponent from "./components/FormComponent.vue";
+
+//import MinionComponent from "./components/minion/MinionComponent.vue";
 
 export default {
     name: 'App',
     components: {
-        MinionComponent
+        HeaderComponent,
+        FormComponent
+        
     },
     data() {
         return {
@@ -40,6 +47,9 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 :root {
     /* COLORS */
     --yellow: #fce55b;
@@ -69,6 +79,11 @@ export default {
     --minion-width: var(--default-width);
     --minion-height: var(--default-height);
     --minion-dungarees: var(--minion--dungarees-default);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
 .center {
