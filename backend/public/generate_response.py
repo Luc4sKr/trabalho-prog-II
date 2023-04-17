@@ -1,4 +1,5 @@
-from flask import Response, jsonify
+import json
+from flask import Response
 
 def generate_response(status, content_name, content, message=False):
     body = {}
@@ -7,4 +8,4 @@ def generate_response(status, content_name, content, message=False):
     if (message):
         body["message"] = message
 
-    return Response(jsonify(body), status=status, mimetype="application/json")
+    return Response(json.dumps(body), status=status, mimetype="application/json")

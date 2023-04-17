@@ -6,4 +6,5 @@ def index():
     return "backend"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    with app.app_context():
+        app.run(debug=True)
