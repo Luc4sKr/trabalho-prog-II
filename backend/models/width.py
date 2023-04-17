@@ -8,10 +8,12 @@ class Width(db.Model):
     css_dungarees_reference = db.Column(db.Text)
 
     def __str__(self):
-        return
+        return f"{self.id}, {self.width}, {self.css_width_reference}, {self.css_dungarees_reference}"
     
     def json(self):
         return {
             "id": self.id,
-            "width": self.width
+            "width": self.width,
+            "css_width": self.css_width_reference,
+            "css_dungarees": self.css_dungarees_reference
         }

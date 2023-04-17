@@ -6,7 +6,10 @@ class Height(db.Model):
     height = db.Column(db.Text)
 
     def __str__(self):
-        return
+        return f"{self.id}, {self.height}"
     
     def json(self):
-        return
+        return{
+            "id": self.id,
+            "height": self.height
+        }
