@@ -1,6 +1,6 @@
 from public.config import *
 
-from .amount_of_eyes import AmountOfEyes
+from .width import Width
 from .height import Height
 from .hair_style import HairStyle
 from .pose import Pose
@@ -11,12 +11,12 @@ class Minion(db.Model):
     name = db.Column (db.Text)
 
     hair_id= db.Column(db.Integer, db.ForeignKey(HairStyle.id), nullable=False)
-    eyes_id = db.Column(db.Integer, db.ForeignKey(AmountOfEyes.id), nullable=False)
+    width_id = db.Column(db.Integer, db.ForeignKey(Width.id), nullable=False)
     height_id = db.Column(db.Integer, db.ForeignKey(Height.id), nullable=False)
     pose_id = db.Column(db.Integer, db.ForeignKey(Pose.id), nullable=False)
 
     hair = db.relationship ("HairStyle")
-    eyes = db.relationship ("AmountOfEyes")
+    width = db.relationship ("Width")
     height = db.relationship ("Height")
     pose = db.relationship ("Pose")
 
@@ -28,7 +28,7 @@ class Minion(db.Model):
             "id": self.id,
             "name": self.name,
             "hair_id": self.hair_id,
-            "eyes_id": self.eyes_id,
+            "width_id": self.width_id,
             "height_id": self.hair_id,
             "pose_id": self.pose_id,
 

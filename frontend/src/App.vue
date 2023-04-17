@@ -64,7 +64,7 @@ export default {
 }
 
 .center {
-    width: 100%;
+    width: 300px;
 
     margin-left: 100px;
 }
