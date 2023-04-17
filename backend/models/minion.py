@@ -21,7 +21,7 @@ class Minion(db.Model):
     pose = db.relationship ("Pose")
 
     def __str__(self):
-        return
+        return f"{self.id}, {self.name}, {self.hair_id}, {self.width_id}, {self.hair_id}, {self.pose_id}"
 
     def json(self):
         return {
@@ -32,7 +32,10 @@ class Minion(db.Model):
             "height_id": self.hair_id,
             "pose_id": self.pose_id,
 
-            "hair": self.hair.json()
+            "hair": self.hair.json(),
+            "width": self.width.json(),
+            "height": self.height.json(),
+            "pose": self.pose.json()
             # ... 
         }
 

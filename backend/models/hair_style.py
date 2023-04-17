@@ -7,7 +7,10 @@ class HairStyle(db.Model):
     hair_name = db.Column(db.Text)
 
     def __str__(self):
-        return
+        return f"{self.id}, {self.hair_name}"
     
     def json(self):
-        return
+        return{
+            "id": self.id,
+            "hair_name": self.hair_name
+        }
