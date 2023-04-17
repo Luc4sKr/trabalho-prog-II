@@ -17,3 +17,8 @@ class Width(db.Model):
             "css_width": self.css_width_reference,
             "css_dungarees": self.css_dungarees_reference
         }
+    
+
+
+
+    
