@@ -16,7 +16,7 @@ def list(model_class: str):
         if model_class.lower() == "widths":
             data = db.session.query(Width).all()
         
-        if model_class.lower() == "heigh":
+        if model_class.lower() == "heights":
             data = db.session.query(Height).all()
 
         if data:

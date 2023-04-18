@@ -29,6 +29,6 @@ header {
 
 h1 {
     text-align: center;
-    font-size: 75px;
+    font-size: 5em;
 }
 </style>
