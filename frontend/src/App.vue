@@ -70,15 +70,15 @@ export default {
     --high-height: 190px;
 
     /* DUNGAREES */
-    --minion--dungarees-small: -5px;
-    --minion--dungarees-default: -7px;
-    --minion--dungarees-high: -11px;
+    --minion-dungarees-small: -5px;
+    --minion-dungarees-default: -7px;
+    --minion-dungarees-high: -11px;
 
 
     /* --- MINION --- */
     --minion-width: var(--default-width);
     --minion-height: var(--default-height);
-    --minion-dungarees: var(--minion--dungarees-default);
+    --minion-dungarees: var(--minion-dungarees-default);
 }
 
 * {

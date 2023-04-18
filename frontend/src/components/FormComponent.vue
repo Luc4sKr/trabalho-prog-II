@@ -13,13 +13,13 @@
                 <option value="baixo">Baixo</option>
             </select>
         </div>
-        
+
         <div>
-            <label for="largura">Largura: </label>
-            <select name="largura" id="largura">
-                <option value="médio">Médio</option>
-                <option value="magro">Magrinho</option>
-                <option value="gordo">Gordinho</option>
+            <label for="width">Width: </label>
+            <select name="width" id="width-input">
+                <option v-for="width in widths" :key="width.id" v-bind:value="width.id">
+                    {{ width.name }}
+                </option>
             </select>
         </div>
 
@@ -43,12 +43,29 @@
 </template>
 
 <script>
-export default {
+//import axios from "axios";
 
+export default {
+    name: "FormComponent",
+    data() {
+        return {
+            widths: []
+        }
+    },
+    created() {
+       console.log(this.get_widths())
+    },
+    methods: {
+        get_widths: function() {
+            fetch("http://127.0.0.1:5000/list/widths")
+                .then(response => response.json())
+                .then(json => {
+                    return json
+                })
+        }
+    }
 }
 </script>
 
 
-<style>
-
-</style>
+<style></style>

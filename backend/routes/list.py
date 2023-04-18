@@ -2,7 +2,6 @@ from public.config import *
 from public.generate_response import *
 
 from models.minion import *
-from models.width import *
 
 
 @app.route("/list/<string:model_class>")
@@ -14,10 +13,11 @@ def list(model_class: str):
         if model_class.lower() == "minions":
             data = db.session.query(Minion).all()
 
-        if model_class.lower() == "width":
+        if model_class.lower() == "widths":
             data = db.session.query(Width).all()
         
-        print(model_class)
+        if model_class.lower() == "heigh":
+            data = db.session.query(Height).all()
 
         if data:
             json_list = [obj.json() for obj in data]
@@ -26,5 +26,5 @@ def list(model_class: str):
         return generate_response(404, "error", "Resource not found")
     
     except Exception as e:
-        return str(e)
+        return generate_response(404, "error", f"Error: {e}")
 

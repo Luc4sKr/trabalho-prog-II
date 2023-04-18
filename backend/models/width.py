@@ -14,8 +14,8 @@ class Width(db.Model):
         return {
             "id": self.id,
             "width": self.width,
-            "css_width": self.css_width_reference,
-            "css_dungarees": self.css_dungarees_reference
+            "css_width_reference": self.css_width_reference,
+            "css_dungarees_reference": self.css_dungarees_reference
         }
     
 

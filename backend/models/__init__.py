@@ -1,1 +1,1 @@
-__all__ = ["minion", "width", "haight", "pose", "hair_style"]
+__all__ = ["minion", "width", "height", "pose", "hair_style"]
