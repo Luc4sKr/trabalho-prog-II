@@ -89,16 +89,17 @@ export default {
     height: 10px;
     width: 100%;
     top: -58px;
+    z-index: -1;
 }
 
 .left-arm {
     top: 0px;
-    right: 105%;
+    right: 104%;
 }
 
 .right-arm {
     top: 0px;
-    left: 105%;
+    left: 104%;
 }
 
 .legs {

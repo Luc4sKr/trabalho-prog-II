@@ -4,20 +4,25 @@
     <div>
         <FormComponent />
     </div>
+
+    <div style="margin: 100px;">
+        <MinionComponent v-bind="minion" />
+    </div>
+
 </template>
 
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
 import FormComponent from "./components/FormComponent.vue";
 
-//import MinionComponent from "./components/minion/MinionComponent.vue";
+import MinionComponent from "./components/minion/MinionComponent.vue";
 
 export default {
     name: 'App',
     components: {
         HeaderComponent,
-        FormComponent
-        
+        FormComponent,
+        MinionComponent
     },
     data() {
         return {
@@ -39,6 +44,9 @@ export default {
                     id: 1,
                     minion_height: "default",
                     css_height_reference: "--default-height"
+                },
+                pose: {
+
                 }
             }
         }
@@ -74,11 +82,15 @@ export default {
     --minion-dungarees-default: -7px;
     --minion-dungarees-high: -11px;
 
+    /* POSE */
+    --t-pose: 90deg;
+    --default-pose: 30deg;
 
     /* --- MINION --- */
     --minion-width: var(--default-width);
     --minion-height: var(--default-height);
     --minion-dungarees: var(--minion-dungarees-default);
+    --minion-pose: var(--default-pose);
 }
 
 * {

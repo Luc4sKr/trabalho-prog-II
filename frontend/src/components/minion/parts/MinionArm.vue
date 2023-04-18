@@ -1,5 +1,6 @@
 <template>
-    <div class="arm">
+    <div class="arm"
+    v-bind-class="{ 'left-arm': left_arm, 'right-arm': !left_arm }">
         <div class="hand"
         v-bind:class="{ 'left-hand': left_arm, 'right-hand': !left_arm }"></div>
     </div>
@@ -31,9 +32,18 @@ export default {
     width: 10px;
     height: 35px;
     z-index: 30;
-    transform: rotate(90deg);
-
     position: absolute;
+
+    border-radius: 100px;
+}
+
+
+.left-arm {
+    transform: rotate(var(--minion-pose));
+}
+
+.right-arm {
+    transform: rotate(calc(180deg - var(--minion-pose)));
 }
 
 .hand {
