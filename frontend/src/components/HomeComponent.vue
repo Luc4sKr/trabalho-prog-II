@@ -1,5 +1,10 @@
 <template>
-    <FormComponent />
+    <div class="form-container">
+        <FormComponent />
+    </div>
+    <div class="list-container">
+
+    </div>
 </template>
 
 <script>

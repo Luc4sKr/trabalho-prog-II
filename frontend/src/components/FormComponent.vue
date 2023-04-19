@@ -1,17 +1,18 @@
 <template>
     <div>
-        <button @click="modal_open=true">Open</button>
+        <button @click="modal_open = true">Open</button>
     </div>
     <div class=".root">
         <div v-if="modal_open" class="modal">
             <form id="minion-form">
                 <div class="form-control">
                     <label for="nome">Nome: </label>
-                    <input type="text" name="nome" id="nome-input">
+                    <input type="text" name="nome" id="nome-input" placeholder="Name">
                 </div>
                 <div class="form-control">
-                    <label for="hair">Hair: </label>
+                    <label for="hair">Hair Style: </label>
                     <select name="hair" id="hair">
+                        <option value="" disabled selected>Select</option>
                         <option v-for="hair in hairs" :key="hair.id" v-bind:value="hair.id">
                             {{ hair.hair_name }}
                         </option>
@@ -20,6 +21,7 @@
                 <div class="form-control">
                     <label for="width">Width: </label>
                     <select name="width" id="width-input">
+                        <option value="" disabled selected>Select</option>
                         <option v-for="width in widths" :key="width.id" v-bind:value="width.id">
                             {{ width.width }}
                         </option>
@@ -28,6 +30,7 @@
                 <div class="form-control">
                     <label for="height">Height: </label>
                     <select name="height" id="height-input">
+                        <option value="" disabled selected>Select</option>
                         <option v-for="height in heights" :key="height.id" v-bind:value="height.id">
                             {{ height.height }}
                         </option>
@@ -36,13 +39,14 @@
                 <div class="form-control">
                     <label for="pose">Pose: </label>
                     <select name="pose" id="pose">
+                        <option value="" disabled selected>Select</option>
                         <option v-for="pose in poses" :key="pose.id" v-bind:value="pose.id">
                             {{ pose.pose_name }}
                         </option>
                     </select>
                 </div>
                 <div class="buttons">
-                    <button id="btn-close" class="btn" @click="modal_open=false">Close</button>
+                    <button id="btn-close" class="btn" @click="modal_open = false">Close</button>
                     <button id="btn-register" class="btn">Register</button>
                 </div>
             </form>
@@ -116,6 +120,7 @@ export default {
 .modal {
     width: 400px;
     height: 350px;
+    box-shadow: 0px 0px 5px #000;
 
     position: absolute;
     top: 50%;
@@ -127,7 +132,7 @@ export default {
     align-items: center;
     justify-content: center;
 
-    background-color: aqua;
+    background-color: var(--yellow);
 }
 
 #minion-form {
@@ -146,13 +151,21 @@ export default {
     margin: 10px;
 }
 
+.form-control > label {
+    font-size: 14px;
+}
+
+.form-control > input, select {
+    height: 20px;
+}
+
 .buttons {
     position: absolute;
     bottom: 10px;
 }
 
 .btn {
-    width: 80px;
+    width: 100px;
     margin: 5px;
 }
 </style>
