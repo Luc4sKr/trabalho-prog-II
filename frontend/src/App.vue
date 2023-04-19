@@ -1,28 +1,17 @@
 <template>
     <HeaderComponent />
-
-    <div>
-        <FormComponent />
-    </div>
-
-    <div style="margin: 100px;">
-        <MinionComponent v-bind="minion" />
-    </div>
-
+    <HomeComponent />
 </template>
 
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
-import FormComponent from "./components/FormComponent.vue";
-
-import MinionComponent from "./components/minion/MinionComponent.vue";
+import HomeComponent from "./components/HomeComponent.vue";
 
 export default {
     name: 'App',
     components: {
         HeaderComponent,
-        FormComponent,
-        MinionComponent
+        HomeComponent
     },
     data() {
         return {
@@ -97,11 +86,4 @@ export default {
     margin: 0px;
     padding: 0px;
 }
-
-.center {
-    width: 300px;
-
-    margin-left: 100px;
-}
-
 </style>

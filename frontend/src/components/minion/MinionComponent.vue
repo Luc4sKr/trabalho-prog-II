@@ -1,6 +1,7 @@
 <template>
     <div class="body">
         <div class="head">
+            <MinionHair />
             <div class="eyes">
                 <MinionGoggles />
             </div>
@@ -16,6 +17,7 @@
 <script>
 import MinionGoggles from "./parts/MinionGoggles.vue";
 import MinionDungarees from "./parts/MinionDungarees.vue";
+import MinionHair from "./parts/MinionHair.vue";
 
 import { setPropertyStyleVal } from "@/scripts/utils.js";
 
@@ -23,7 +25,8 @@ export default {
     name: "MinionComponent",
     components: {
         MinionGoggles,
-        MinionDungarees
+        MinionDungarees,
+        MinionHair
     },
     data() {
         return {

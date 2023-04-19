@@ -1,6 +1,5 @@
 from public.config import *
 from models import *
-from public.populate_tables import populate_all
 
 if __name__ == "__main__":
 
@@ -10,4 +9,7 @@ if __name__ == "__main__":
             os.remove(db_file)
 
         db.create_all()
-        populate_all()
+
+        print("=-" * 40)
+        print("TABELAS CRIADAS")
+        print("=-" * 40)

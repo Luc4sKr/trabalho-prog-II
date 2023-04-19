@@ -19,6 +19,12 @@ def list(model_class: str):
         if model_class.lower() == "heights":
             data = db.session.query(Height).all()
 
+        if model_class.lower() == "hairs":
+            data = db.session.query(HairStyle).all()
+
+        if model_class.lower() == "poses":
+            data = db.session.query(Pose).all()
+
         if data:
             json_list = [obj.json() for obj in data]
             return generate_response(200, model_class, json_list)
