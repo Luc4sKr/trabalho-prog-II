@@ -1,18 +1,17 @@
 <template>
     <div>
-        <button @click="modal_open = true">Open</button>
+        <button @click="modal_open=true">Open</button>
     </div>
     <div class=".root">
         <div v-if="modal_open" class="modal">
-            <form id="minion-form">
+            <form @submit.prevent="include_minion" id="minion-form">
                 <div class="form-control">
                     <label for="nome">Nome: </label>
-                    <input type="text" name="nome" id="nome-input" placeholder="Name">
+                    <input type="text" name="nome" id="nome-input" placeholder="Name" v-model="minion.name">
                 </div>
                 <div class="form-control">
                     <label for="hair">Hair Style: </label>
-                    <select name="hair" id="hair">
-                        <option value="" disabled selected>Select</option>
+                    <select name="hair" id="hair" v-model="minion.hair_id">
                         <option v-for="hair in hairs" :key="hair.id" v-bind:value="hair.id">
                             {{ hair.hair_name }}
                         </option>
@@ -20,8 +19,7 @@
                 </div>
                 <div class="form-control">
                     <label for="width">Width: </label>
-                    <select name="width" id="width-input">
-                        <option value="" disabled selected>Select</option>
+                    <select name="width" id="width-input" v-model="minion.width_id">
                         <option v-for="width in widths" :key="width.id" v-bind:value="width.id">
                             {{ width.width }}
                         </option>
@@ -29,8 +27,7 @@
                 </div>
                 <div class="form-control">
                     <label for="height">Height: </label>
-                    <select name="height" id="height-input">
-                        <option value="" disabled selected>Select</option>
+                    <select name="height" id="height-input" v-model="minion.height_id">
                         <option v-for="height in heights" :key="height.id" v-bind:value="height.id">
                             {{ height.height }}
                         </option>
@@ -38,8 +35,7 @@
                 </div>
                 <div class="form-control">
                     <label for="pose">Pose: </label>
-                    <select name="pose" id="pose">
-                        <option value="" disabled selected>Select</option>
+                    <select name="pose" id="pose" v-model="minion.pose_id">
                         <option v-for="pose in poses" :key="pose.id" v-bind:value="pose.id">
                             {{ pose.pose_name }}
                         </option>
@@ -66,7 +62,15 @@ export default {
             widths: [],
             heights: [],
             hairs: [],
-            poses: []
+            poses: [],
+
+            minion: {
+                name: "",
+                hair_id: 0,
+                width_id: 0,
+                height_id: 0,
+                pose_id: 0
+            }
         }
     },
     created() {
@@ -104,6 +108,15 @@ export default {
             api.get("/list/poses")
                 .then((response) => {
                     this.poses = response.data.poses;
+                }).catch((error) => {
+                    console.log(error)
+                });
+        },
+
+        include_minion: function() {
+            api.post("/include/minion", this.minion)
+                .then((response) => {
+                    console.log(response)
                 }).catch((error) => {
                     console.log(error)
                 });

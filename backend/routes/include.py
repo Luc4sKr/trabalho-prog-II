@@ -4,11 +4,13 @@ from public.generate_response import *
 from models.minion import *
 
 
-@app.route("/incluir/<string:class>", methods=["POST"])
+@app.route("/include/<string:model_class>", methods=["POST"])
 def include(model_class: str):
     data = request.get_json()
     try:
         new = None
+
+        print(data)
 
         if (model_class.lower() == "minion"):
             new = Minion(**data)
