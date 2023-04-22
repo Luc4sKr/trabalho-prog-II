@@ -3,17 +3,19 @@
         <FormComponent />
     </div>
     <div class="list-container">
-
+        <MinionListComponent />
     </div>
 </template>
 
 <script>
 import FormComponent from './FormComponent.vue';
+import MinionListComponent from './MinionListComponent.vue';
 
 export default {
     name: "HomeComponent",
     components: {
-        FormComponent
+        FormComponent,
+        MinionListComponent
     },
     data() {
         return {
@@ -23,6 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 
 </style>

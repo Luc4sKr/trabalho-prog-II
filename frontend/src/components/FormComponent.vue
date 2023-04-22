@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <button @click="modal_open=true">Open</button>
+    <div class="modal-btn-container">
+        <button id="open-modal-btn" @click="modal_open=true">New Minion</button>
     </div>
     <div class=".root">
         <div v-if="modal_open" class="modal">
@@ -57,7 +57,7 @@ export default {
     name: "FormComponent",
     data() {
         return {
-            modal_open: true,
+            modal_open: false,
 
             widths: [],
             heights: [],
@@ -146,6 +146,19 @@ export default {
     justify-content: center;
 
     background-color: var(--yellow);
+}
+
+.modal-btn-container {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#open-modal-btn {
+    width: 100px;
 }
 
 #minion-form {

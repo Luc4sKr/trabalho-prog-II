@@ -49,6 +49,10 @@ export default {
         height: {
             type: Object,
             required: true
+        },
+        pose: {
+            type: Object,
+            required: true
         }
     },
     created() {
