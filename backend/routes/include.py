@@ -1,8 +1,6 @@
 from public.config import *
 from public.generate_response import *
 
-from models.minion import *
-
 
 @app.route("/include/<string:model_class>", methods=["POST"])
 def include(model_class: str):
