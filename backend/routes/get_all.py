@@ -2,6 +2,7 @@ from public.config import *
 from public.generate_response import *
 
 from models.category import Category
+from models.book import Book
 
 @app.route("/list/<string:model_class>")
 def list(model_class: str):
@@ -11,6 +12,9 @@ def list(model_class: str):
 
         if model_class.lower() == "category":
             data = db.session.query(Category).all()
+
+        if model_class.lower() == "book":
+            data = db.session.query(Book).all()
 
         if data:
             json_list = [obj.json() for obj in data]
