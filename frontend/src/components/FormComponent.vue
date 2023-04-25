@@ -1,13 +1,13 @@
 <template>
     <div class="modal book-modal">
-        <form id="book-form" @submit.prevent="include_book">
+        <form id="book-form" @submit.prevent="include_book" method="post">
             <div class="form-control">
                 <label for="title">Title</label>
-                <input id="title-input" name="title" type="text">
+                <input id="title-input" name="title" type="text" v-model="book.title">
             </div>
             <div class="form-control">
                 <label for="category">Category</label>
-                <select id="category-input" name="category">
+                <select id="category-input" name="category" v-model="book.category_id">
                     <option v-for="category in categories" :key="category.id" v-bind:value="category.id">
                         {{ category.category_name }}
                     </option>
@@ -15,20 +15,20 @@
             </div>
             <div class="form-control">
                 <label for="author">Author</label>
-                <input id="author-input" name="author" type="text">
+                <input id="author-input" name="author" type="text" v-model="book.author">
             </div>
             <div class="form-control">
-                <label for="grade">Grade: <span>{{ grade_value }}</span></label>
-                <input id="grade-input" name="grade" type="range" min="0" max="5" v-model="grade_value">
+                <label for="grade">Grade: <span>{{ book.grade }}</span></label>
+                <input id="grade-input" name="grade" type="range" min="0" max="5" v-model="book.grade">
             </div>
             <div class="form-control">
                 <label for="resume">Resume</label>
-                <textarea name="resume" id="resume" cols="30" rows="10"></textarea>
+                <textarea name="resume" id="resume" cols="30" rows="10" v-model="book.resume"></textarea>
             </div>
             <div class="form-control">
                 <label for="reading-time">Reading Time</label>
                 <div class="reading-time-input-container">
-                    <input id="reading-time-input" name="reading-time" type="number">
+                    <input id="reading-time-input" name="reading-time" type="number" v-model="book.reading_time">
                     <span>Hours</span>
                 </div>
             </div>
@@ -48,7 +48,15 @@ export default {
     data() {
         return {
             categories: [],
-            grade_value: 3
+
+            book: {
+                category_id: 1,
+                title: "",
+                author: "",
+                grade: 0,
+                resume: "",
+                reading_time: 0
+            }
         }
     },
     created() {
@@ -62,6 +70,16 @@ export default {
                 })
                 .catch((error) => {
                     console.log(error);
+                });
+        },
+        include_book: function () {
+            console.log(this.book)
+
+            api.post("/include/book", this.book)
+                .then((response) => {
+                    console.log(response)
+                }).catch((error) => {
+                    console.log(error)
                 });
         }
     }
@@ -115,18 +133,20 @@ select {
     float: left;
 }
 
-.reading-time-input-container > input {
+.reading-time-input-container>input {
     width: 30px;
+    text-align: center;
+    margin-right: 5px;
 }
 
-input[type=number]::-webkit-inner-spin-button { 
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 
 }
 
-input[type=number] { 
-   -moz-appearance: textfield;
-   appearance: textfield;
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 #btn-register {
