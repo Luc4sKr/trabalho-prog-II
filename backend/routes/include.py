@@ -17,7 +17,7 @@ def include(model_class: str):
             new = Category(**data)
             db.session.add(new)
             db.session.commit()
-            
+
             response = generate_response(200, "category", new.json(), "successfully created")
 
         if (model_class.lower() == "book"):
@@ -27,8 +27,6 @@ def include(model_class: str):
 
             response = generate_response(200, "book", new.json(), "successfully created")
         
-        
-
         return response
 
     except Exception as e:
