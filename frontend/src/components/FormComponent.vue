@@ -18,8 +18,8 @@
                 <input id="author-input" name="author" type="text">
             </div>
             <div class="form-control">
-                <label for="grade">Grade</label>
-                <input id="grade-input" name="grade" type="text">
+                <label for="grade">Grade: <span>{{ grade_value }}</span></label>
+                <input id="grade-input" name="grade" type="range" min="0" max="5" v-model="grade_value">
             </div>
             <div class="form-control">
                 <label for="resume">Resume</label>
@@ -34,7 +34,6 @@
             </div>
 
             <div class="buttons">
-                <button id="btn-close" class="btn" @click="modal_open = false">Close</button>
                 <button id="btn-register" class="btn">Register</button>
             </div>
         </form>
@@ -48,7 +47,8 @@ export default {
     name: "FormComponent",
     data() {
         return {
-            categories: []
+            categories: [],
+            grade_value: 3
         }
     },
     created() {
@@ -127,5 +127,9 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] { 
    -moz-appearance: textfield;
    appearance: textfield;
+}
+
+#btn-register {
+    width: 100px;
 }
 </style>

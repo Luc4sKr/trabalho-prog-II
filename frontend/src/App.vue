@@ -28,4 +28,19 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.btn {
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #1875FF;
+    color: #fff;
+    font-family: inherit;
+    text-align: center;
+    font-size: 12px;
+    box-shadow: 0px 14px 56px -11px #1875FF;
+    padding: 0.8em;
+    transition: all 0.4s;
+    cursor: pointer;
+}
 </style>
