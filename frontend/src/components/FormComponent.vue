@@ -73,14 +73,14 @@ export default {
                 });
         },
         include_book: function () {
-            console.log(this.book)
-
             api.post("/include/book", this.book)
                 .then((response) => {
                     console.log(response)
                 }).catch((error) => {
                     console.log(error)
                 });
+            
+            this.$emit("reload_books");
         }
     }
 }
