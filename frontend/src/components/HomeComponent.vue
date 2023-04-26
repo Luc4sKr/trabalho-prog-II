@@ -15,11 +15,11 @@
                         <h2>{{ book.title }}</h2>
                     </div>
                     <div class="body">
-                        <p>{{ book.category.category_name }}</p>
-                        <p>{{ book.author }}</p>
-                        <p>{{ book.grade }}</p>
-                        <p>{{ book.reading_time }}</p>
-                        <p>{{ book.resume }}</p>
+                        <p><strong>Category</strong>: {{ book.category.category_name }}</p>
+                        <p><strong>Author</strong>: {{ book.author }}</p>
+                        <p><strong>Grade</strong>: {{ book.grade }}</p>
+                        <p><strong>Reading</strong> Time: {{ book.reading_time }}</p>
+                        <p class="resume"><strong>Resume</strong>: {{ book.resume }}</p>
                     </div>
                 </div>
             </div>
@@ -116,9 +116,20 @@ export default {
 
 .title {
     width: 100%;
-    height: 30px;
+    min-height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.title>h2 {
+    text-align: center;
+}
+
+.resume {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
 }
 </style>
