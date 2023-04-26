@@ -4,22 +4,20 @@
         <div class="modal-container">
             <button id="btn-modal" class="btn" @click="toggle_modal">{{ btn_modal_txt }}</button>
             <Teleport to="#modal">
-                <FormComponent v-if="modal_open" @reload_books="reload"/>
+                <FormComponent v-if="modal_open" @reload_books="reload" />
             </Teleport>
         </div>
 
         <!-- Listagem -->
         <div id="books-list" class="grid-container">
-            <div v-if="books.length > 0">
-                <div class="grid-item" v-for="book in books" :key="book.id">
-                    <div class="card">
-                        <div class="title">
-                            <h2>{{ book.title }}</h2>
-                        </div>
+            <div class="grid-item" v-for="book in books" :key="book.id">
+                <div class="card">
+                    <div class="title">
+                        <h2>{{ book.title }}</h2>
                     </div>
                 </div>
             </div>
-            <div v-else>
+            <div v-if="books.length <= 0">
                 <h2 class="msg-not-found">No registered book</h2>
             </div>
         </div>
@@ -59,14 +57,11 @@ export default {
                 }).catch((error) => {
                     console.log(error)
                 });
-            
+
             console.log(this.books)
         },
-        reload: function () {
-            api.get("/list/book")
-                .then((response) => {
-                    this.books = response.data.book;
-                });
+        reload: function (new_book) {
+            this.books.push(new_book);
         }
     }
 }

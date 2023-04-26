@@ -42,6 +42,7 @@
 
 <script>
 import api from "@/services/api.js";
+import { ref } from 'vue';
 
 export default {
     name: "FormComponent",
@@ -50,12 +51,12 @@ export default {
             categories: [],
 
             book: {
-                category_id: 1,
-                title: "",
-                author: "",
-                grade: 0,
-                resume: "",
-                reading_time: 0
+                title: ref(""),
+                author: ref(""),
+                grade: ref(0),
+                resume: ref(""),
+                reading_time: ref(0),
+                category_id: ref(1)
             }
         }
     },
@@ -79,8 +80,8 @@ export default {
                 }).catch((error) => {
                     console.log(error)
                 });
-            
-            this.$emit("reload_books");
+
+            this.$emit("reload_books", this.book);
         }
     }
 }
