@@ -4,16 +4,22 @@
         <div class="modal-container">
             <button id="btn-modal" class="btn" @click="toggle_modal">{{ btn_modal_txt }}</button>
             <Teleport to="#modal">
-                <FormComponent v-if="modal_open" @reload_books="reload" />
+                <FormComponent v-if="modal_open" />
             </Teleport>
         </div>
 
-        <!-- Listagem -->
         <div id="books-list" class="grid-container">
             <div class="grid-item" v-for="book in books" :key="book.id">
                 <div class="card">
                     <div class="title">
                         <h2>{{ book.title }}</h2>
+                    </div>
+                    <div class="body">
+                        <p>{{ book.category.category_name }}</p>
+                        <p>{{ book.author }}</p>
+                        <p>{{ book.grade }}</p>
+                        <p>{{ book.reading_time }}</p>
+                        <p>{{ book.resume }}</p>
                     </div>
                 </div>
             </div>
@@ -59,9 +65,6 @@ export default {
                 });
 
             console.log(this.books)
-        },
-        reload: function (new_book) {
-            this.books.push(new_book);
         }
     }
 }
@@ -95,12 +98,27 @@ export default {
     width: 300px;
     height: 210px;
     margin: 10px;
-    border: 1px solid #000;
+    margin-bottom: 30px;
     border-radius: 6px;
 }
 
 .msg-not-found {
     font-size: 28px;
     text-align: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-shadow: 1px 1px 2px #000;
+}
+
+.title {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
