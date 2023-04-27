@@ -10,18 +10,7 @@
 
         <div id="books-list" class="grid-container">
             <div class="grid-item" v-for="book in books" :key="book.id">
-                <div class="card">
-                    <div class="title">
-                        <h2>{{ book.title }}</h2>
-                    </div>
-                    <div class="body">
-                        <p><strong>Category:</strong> {{ book.category.category_name }}</p>
-                        <p><strong>Author:</strong> {{ book.author }}</p>
-                        <p><strong>Grade:</strong> {{ book.grade }}</p>
-                        <p><strong>Reading Time:</strong>{{ book.reading_time }}</p>
-                        <p class="resume"><strong>Resume:</strong> {{ book.resume }}</p>
-                    </div>
-                </div>
+                <CardComponent v-bind="book"/>
             </div>
             <div v-if="books.length <= 0">
                 <h2 class="msg-not-found">No registered book</h2>
@@ -33,13 +22,16 @@
 <script>
 import HeaderComponent from './HeaderComponent.vue';
 import FormComponent from './FormComponent.vue';
+import CardComponent from './CardComponent.vue';
+
 import api from "@/services/api.js";
 
 export default {
     name: "HomeComponent",
     components: {
         HeaderComponent,
-        FormComponent
+        FormComponent,
+        CardComponent
     },
     data() {
         return {
@@ -105,37 +97,5 @@ export default {
 .msg-not-found {
     font-size: 28px;
     text-align: center;
-}
-
-.card {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    box-shadow: 1px 1px 15px #1D3461;
-    background-color: #fff;
-}
-
-.title {
-    width: 100%;
-    min-height: 40px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.body {
-    height: 100%;
-}
-
-.title>h2 {
-    text-align: center;
-}
-
-.resume {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
 }
 </style>

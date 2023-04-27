@@ -55,7 +55,7 @@ export default {
                 author: ref(""),
                 grade: ref(0),
                 resume: ref(""),
-                reading_time: ref(0),
+                reading_time: ref(null),
                 category_id: ref(1)
             }
         }
