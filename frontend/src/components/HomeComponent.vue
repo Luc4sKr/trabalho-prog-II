@@ -10,7 +10,7 @@
 
         <div id="books-list" class="grid-container">
             <div class="grid-item" v-for="book in books" :key="book.id">
-                <BookCardComponent v-bind="book"/>
+                <CardComponent v-bind="book"/>
             </div>
             <div v-if="books.length <= 0">
                 <h2 class="msg-not-found">No registered book</h2>
@@ -22,7 +22,8 @@
 <script>
 import HeaderComponent from './HeaderComponent.vue';
 import FormComponent from './FormComponent.vue';
-import BookCardComponent from './BookCardComponent.vue';
+import CardComponent from './CardComponent.vue';
+
 import api from "@/services/api.js";
 
 export default {
@@ -30,7 +31,7 @@ export default {
     components: {
         HeaderComponent,
         FormComponent,
-        BookCardComponent
+        CardComponent
     },
     data() {
         return {
@@ -54,8 +55,6 @@ export default {
                 }).catch((error) => {
                     console.log(error)
                 });
-
-            console.log(this.books)
         }
     }
 }

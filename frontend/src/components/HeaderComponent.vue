@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>Book Summaries</h1>
+        <h1>BOOK SUMMARIES</h1>
     </header>
 </template>
 
@@ -13,7 +13,7 @@ export default {
 <style scoped>
 header {
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: #1D3461;
 
     display: flex;

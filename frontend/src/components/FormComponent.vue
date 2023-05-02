@@ -55,7 +55,7 @@ export default {
                 author: ref(""),
                 grade: ref(0),
                 resume: ref(""),
-                reading_time: ref(0),
+                reading_time: ref(null),
                 category_id: ref(1)
             }
         }
@@ -88,7 +88,7 @@ export default {
 <style scoped>
 .book-modal {
     width: 400px;
-    height: 480px;
+    height: 460px;
     background-color: #1D3461;
 }
 
