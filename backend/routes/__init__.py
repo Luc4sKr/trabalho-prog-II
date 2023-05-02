@@ -1,1 +1,1 @@
-__all__ = ["include", "get_all"]
+__all__ = ["include", "get_all", "get_by_id"]
