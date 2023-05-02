@@ -34,6 +34,10 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.modal .resume-container {
+    display: block;
+}
+
 .btn {
     display: inline-block;
     border-radius: 7px;

@@ -21,6 +21,10 @@
 export default {
     name: "CardComponent",
     props: {
+        id: {
+            type: Number,
+            required: true
+        },
         title: {
             type: String,
             required: true
@@ -45,17 +49,27 @@ export default {
             type: String,
             required: true
         }
+    },
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        
     }
 }
 </script>
 
 <style scoped>
 .card {
-    width: 100%;
-    height: 100%;
+    width: 320px;
+    height: 200px;
     padding: 10px;
     box-shadow: 2px 2px 15px #1D3461;
     background-color: #fff;
+
+    cursor: pointer;
 }
 
 .card-head {
@@ -76,7 +90,6 @@ export default {
 }
 
 .resume-container {
-    display: block;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
