@@ -103,7 +103,7 @@ export default {
 }
 
 .card-book-modal {
-    width: 320px;
+    width: 360px;
     min-height: 300px;
     padding: 10px;
     background-color: #fff;
