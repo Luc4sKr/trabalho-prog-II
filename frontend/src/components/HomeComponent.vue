@@ -75,6 +75,10 @@ export default {
                 });
         },
         open_card_modal: async function (id) {
+            if (this.form_open) {
+                return
+            }
+
             try {
                 const response = await api.get(`/list/book/${id}`);
                 console.log(response.data.book);
