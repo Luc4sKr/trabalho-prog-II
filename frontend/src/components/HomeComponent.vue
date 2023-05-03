@@ -23,6 +23,8 @@
                     <CardComponent v-bind="book_modal" />
                     <div class="btn-container">
                         <button class="btn close-btn-card-modal" @click="close_card_modal">Close</button>
+                        <button class="btn delete-btn-card-modal"
+                            @click="delete_card_modal(current_book_id)">Delete</button>
                     </div>
                 </div>
             </Teleport>
@@ -51,7 +53,8 @@ export default {
             books: [],
 
             card_modal_open: false,
-            book_modal: {}
+            book_modal: {},
+            current_book_id: null
         }
     },
     created() {
@@ -79,6 +82,8 @@ export default {
                 return
             }
 
+            this.current_book_id = id
+
             try {
                 const response = await api.get(`/list/book/${id}`);
                 console.log(response.data.book);
@@ -89,8 +94,18 @@ export default {
 
             this.card_modal_open = true;
         },
-        close_card_modal: function() {
+        close_card_modal: function () {
             this.card_modal_open = false;
+        },
+        delete_card_modal: function (id) {
+            api.delete(`/delete/book/${id}`)
+                .then((response) => {
+                    console.log(response)
+                }).catch((error) => {
+                    console.log(error)
+                });
+
+            window.location.reload();
         }
     }
 }
@@ -135,6 +150,15 @@ export default {
     width: 100px;
     height: auto;
     margin: 10px;
+}
+
+.close-btn-card-modal {
+    margin-right: 2px;
+}
+
+.delete-btn-card-modal {
+    margin-left: 2px;
+    background-color: rgb(211, 0, 0);
 }
 
 .grid-container {
