@@ -13,3 +13,8 @@ if __name__ == "__main__":
         
         case ("linux"):
             pass
+    
+    
+    print("==" * 30)
+    print("FRONTEND E BACKEND OPERANTES")
+    print("==" * 30)
